@@ -1,2 +1,6 @@
-# reto_primera_evaluacion_2025
-Repositorio que contiene los datos relacionados con el reto de la primera evaluación, del segundo curso del grado de Formación Profesional de Desarrollo de Aplicaciones Multiplataforma.
+# RETO DE LA PRIMERA EVALUACIÓN - JANARIAK
+Este repositorio contiene los proyectos realizados para el reto de la primera evaluación.
+## ¿Qué es un reto?
+
+## ¿Qué es lo que pide este reto?
+
