@@ -1,0 +1,45 @@
+package Repositorios;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import Clases.Plato;
+import Conector.ConectorBD;
+
+
+
+public class RepositorioPlatos {
+	
+	public RepositorioPlatos() throws SQLException {
+        ConectorBD.conectar();
+    }
+
+    public void insertarPelicula(Plato p) throws SQLException {
+        String sql = "INSERT INTO peliculas (nombre, precio) VALUES (?, ?)";
+        try (PreparedStatement stmt = ConectorBD.getConexion().prepareStatement(sql)) {
+            stmt.setString(1, p.nombre);
+            stmt.setInt(2, p.precio);
+            stmt.executeUpdate();
+        }
+    }
+
+    public List<Plato> obtenerTodas() throws SQLException {
+        List<Plato> lista = new ArrayList<>();
+        String sql = "SELECT * FROM platos";
+        try (Statement stmt = ConectorBD.getConexion().createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                lista.add(new Plato(
+                	rs.getInt("id_producto"),
+                    rs.getString("nombre"),
+                    rs.getInt("precio")
+                ));
+            }
+        }
+        return lista;
+    }
+}
