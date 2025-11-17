@@ -1,0 +1,100 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\2dam3\\source\\repos\\GestionJanariak\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{42F60C3B-9057-4BC2-AD45-84CA288B4CC9}|GestionJanariak\\GestionJanariak.csproj|c:\\users\\2dam3\\source\\repos\\gestionjanariak\\gestionjanariak\\menuinicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{42F60C3B-9057-4BC2-AD45-84CA288B4CC9}|GestionJanariak\\GestionJanariak.csproj|solutionrelative:gestionjanariak\\menuinicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F60C3B-9057-4BC2-AD45-84CA288B4CC9}|GestionJanariak\\GestionJanariak.csproj|c:\\users\\2dam3\\source\\repos\\gestionjanariak\\gestionjanariak\\buscarpedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{42F60C3B-9057-4BC2-AD45-84CA288B4CC9}|GestionJanariak\\GestionJanariak.csproj|solutionrelative:gestionjanariak\\buscarpedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F60C3B-9057-4BC2-AD45-84CA288B4CC9}|GestionJanariak\\GestionJanariak.csproj|c:\\users\\2dam3\\source\\repos\\gestionjanariak\\gestionjanariak\\anadircliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{42F60C3B-9057-4BC2-AD45-84CA288B4CC9}|GestionJanariak\\GestionJanariak.csproj|solutionrelative:gestionjanariak\\anadircliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F60C3B-9057-4BC2-AD45-84CA288B4CC9}|GestionJanariak\\GestionJanariak.csproj|c:\\users\\2dam3\\source\\repos\\gestionjanariak\\gestionjanariak\\crearpedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{42F60C3B-9057-4BC2-AD45-84CA288B4CC9}|GestionJanariak\\GestionJanariak.csproj|solutionrelative:gestionjanariak\\crearpedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F60C3B-9057-4BC2-AD45-84CA288B4CC9}|GestionJanariak\\GestionJanariak.csproj|c:\\users\\2dam3\\source\\repos\\gestionjanariak\\gestionjanariak\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{42F60C3B-9057-4BC2-AD45-84CA288B4CC9}|GestionJanariak\\GestionJanariak.csproj|solutionrelative:gestionjanariak\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CrearPedido.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\2dam3\\source\\repos\\GestionJanariak\\GestionJanariak\\CrearPedido.cs",
+              "RelativeDocumentMoniker": "GestionJanariak\\CrearPedido.cs",
+              "ToolTip": "C:\\Users\\2dam3\\source\\repos\\GestionJanariak\\GestionJanariak\\CrearPedido.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GestionJanariak\\CrearPedido.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T06:00:31.553Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BuscarPedido.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\2dam3\\source\\repos\\GestionJanariak\\GestionJanariak\\BuscarPedido.cs",
+              "RelativeDocumentMoniker": "GestionJanariak\\BuscarPedido.cs",
+              "ToolTip": "C:\\Users\\2dam3\\source\\repos\\GestionJanariak\\GestionJanariak\\BuscarPedido.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GestionJanariak\\BuscarPedido.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:59:44.027Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AnadirCliente.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\2dam3\\source\\repos\\GestionJanariak\\GestionJanariak\\AnadirCliente.cs",
+              "RelativeDocumentMoniker": "GestionJanariak\\AnadirCliente.cs",
+              "ToolTip": "C:\\Users\\2dam3\\source\\repos\\GestionJanariak\\GestionJanariak\\AnadirCliente.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GestionJanariak\\AnadirCliente.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:10:09.228Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MenuInicio.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\2dam3\\source\\repos\\GestionJanariak\\GestionJanariak\\MenuInicio.cs",
+              "RelativeDocumentMoniker": "GestionJanariak\\MenuInicio.cs",
+              "ToolTip": "C:\\Users\\2dam3\\source\\repos\\GestionJanariak\\GestionJanariak\\MenuInicio.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GestionJanariak\\MenuInicio.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T04:38:29.108Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "C:\\Users\\2dam3\\source\\repos\\GestionJanariak\\GestionJanariak\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "GestionJanariak\\Properties\\Resources.resx",
+              "ToolTip": "C:\\Users\\2dam3\\source\\repos\\GestionJanariak\\GestionJanariak\\Properties\\Resources.resx",
+              "RelativeToolTip": "GestionJanariak\\Properties\\Resources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-11-17T04:59:45.73Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
