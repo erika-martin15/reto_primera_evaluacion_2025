@@ -21,7 +21,7 @@ public class RepositorioPedidos {
     }
 
     public void insertarPedido(Pedido p) throws SQLException {
-        String sql = "INSERT INTO Pedido (id_cliente, detalle_pedido, fecha_hora, precio_total) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO pedidos (id_cliente, detalle_pedido, fecha_hora, precio_total) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = ConectorBD.getConexion().prepareStatement(sql)) {
             stmt.setInt(1, p.cliente.id);
             stmt.setString(2, p.detalle_pedido);
@@ -51,4 +51,28 @@ public class RepositorioPedidos {
         }
         return pedidos;
     }
+    
+    public int obtenerUltimoId() throws SQLException {
+        String sql = "SELECT LAST_INSERT_ID()";
+        PreparedStatement ps = ConectorBD.getConexion().prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+
+        if (rs.next()) {
+            return rs.getInt(1);
+        }
+
+        return -1;
+    }
+
+    
+    public void insertarPedido_Plato(int id_pedido, int id_plato, int cantidad) throws SQLException {
+        String sql = "INSERT INTO pedidos_platos (id_pedido, id_plato, cantidad) VALUES (?, ?, ?)";
+        PreparedStatement ps = ConectorBD.getConexion().prepareStatement(sql);
+        ps.setInt(1, id_pedido);
+        ps.setInt(2, id_plato);
+        ps.setInt(3, cantidad);
+        ps.executeUpdate();
+    }
+
+    
 }

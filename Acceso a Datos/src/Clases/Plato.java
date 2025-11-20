@@ -2,22 +2,32 @@ package Clases;
 
 public class Plato { 
 	
+	public int id;
 	public int id_producto;
 	public String nombre;
 	public int precio;
     
-    public Plato(int id_producto, String nombre, int precio) {
+    public Plato(int id, int id_producto, String nombre, int precio) {
 		super();
+		this.id = id;
 		this.nombre = nombre;
 		this.precio = precio;
 		this.id_producto = id_producto;
 	}
-    
-    public int getid_producto() {
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getId_producto() {
 		return id_producto;
 	}
 
-	public void setid_producto(int id_producto) {
+	public void setId_producto(int id_producto) {
 		this.id_producto = id_producto;
 	}
 
@@ -29,18 +39,12 @@ public class Plato {
 		this.nombre = nombre;
 	}
 
-	public int getprecio() {
+	public int getPrecio() {
 		return precio;
 	}
 
-	public void setGenero(int precio) {
+	public void setPrecio(int precio) {
 		this.precio = precio;
-	}
-
-	@Override
-	public String toString() {
-		return "Platos [" + "nombre=" + nombre + ", genero=" + precio
-				 + "id_cliente=" + id_producto + "]";
 	}
 
 }

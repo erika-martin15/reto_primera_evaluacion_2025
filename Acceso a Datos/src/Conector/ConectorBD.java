@@ -18,7 +18,7 @@ public class ConectorBD {
                 conexion = DriverManager.getConnection(
                 			    "jdbc:mysql://localhost:3306/janariak?serverTimezone=Europe/Madrid",
                 			    "root",
-                			    "root"
+                			    "1234"
                 			);
                 System.out.println("Conexión establecida correctamente.");
             }

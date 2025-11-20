@@ -27,13 +27,14 @@ public class RepositorioPlatos {
         }
     }
 
-    public List<Plato> obtenerTodas() throws SQLException {
-        List<Plato> lista = new ArrayList<>();
+    public ArrayList <Plato> obtenerTodas() throws SQLException {
+        ArrayList<Plato> lista = new ArrayList<>();
         String sql = "SELECT * FROM platos";
         try (Statement stmt = ConectorBD.getConexion().createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 lista.add(new Plato(
+                	rs.getInt("id"),
                 	rs.getInt("id_producto"),
                     rs.getString("nombre"),
                     rs.getInt("precio")
