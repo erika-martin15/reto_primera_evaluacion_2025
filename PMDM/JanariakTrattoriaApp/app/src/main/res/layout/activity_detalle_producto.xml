@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_claro">
+    <!-- En el apartado de Detalle de Producto, queríamos emular lo que muchas aplicaciones de comida ya ofrecen: una ventana que contenga la imagen principal
+     del plato que se pueda reducir, poco a poco, cuando vas haciendo scroll en la ventana. También se podría haber seguido con el LinearLayout, pero no
+     hemos creído que sea lo más conveniente.
+
+     No solo esto, si no que el uso del "ExtendedFloatingActionButton" (el botón flotante del carrito) necesita de este tipo de Layout para funcionar correctamente.-->
+
+    <!-- Comenzaremos creando un AppBarLayout. Este tipo de contenedor es, técnicamente, un LinearLayout (hereda de él) que responde al movimiento scroll. Esto será
+     lo que permite que nuestra imagen esté "animada" y se colapse al hacer scroll hacia abajo (y aparezca de nuevo cuando vuelves arriba). Necesita del CoordinatorLayout
+     para funcionar bien.-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!-- Vamos a hacer que la cabecera con la imagen se contraiga/expanda. La altura, en este caso, corresponde al máximo al que puede llegar una vez expandida. -->
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="@color/rojo"
+            app:expandedTitleMarginStart="16dp"
+            app:expandedTitleMarginBottom="16dp">
+            <!-- Existen varios atributos que no habíamos visto antes aquí. "app:layout_scrollFlags="scroll|exitUntilCollapsed"" permite que todo lo que hay dentro
+            se mueva con el scroll y se contraiga una vez llegue al tamaño mínimo. NO desaparecerá, la imagen seguirá cargada, lo único que no se verá.
+
+            "app:contentScrim="@color/rojo"" se refiere a un color que solo aparecerá cuando la imagen esté colapsada: en vez de verla, se verá un fondo rojo.-->
+            <ImageView
+                android:id="@+id/imagenViewDetalleProducto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_foreground"
+                app:layout_collapseMode="parallax"
+                android:contentDescription="Imagen del producto" />
+            <!-- "android:scaleType" recortará la imagen para llenar el espacio que está disponible (por si la imagen es más grande). Por otro lado,
+             con "app:layout_collapseMode" en "parallax" crearemos el efecto de que la imagen se mueve más lento que el scroll. Esto se puede ver en aplicaciones como
+             Google Fotos.-->
+
+            <!-- Añadimos un gradiente oscuro encima de la parte inferior de la imagen (ya que una de las posibles mejoras para el futuro sería añadir el texto
+            directamente en la imagen). -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/gradient_black" />
+
+            <!-- El botón "volver". Estará siempre visible, para ello crearemos un toolbar. -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
+                <!-- "android:layout_height" es la altura estandar que tiene, por diseño, la barra de acción (forma parte de los prediseñados por Android).
+                 Por otro lado, "app:layout_collapseMode" en "pin" mantiene el toolbar fijo en la parte de arriba, se haya colapsado la imagen o no.-->
+                <ImageButton
+                    android:id="@+id/botonVolver"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/flecha_atras"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/boton_volver"
+                    app:tint="@color/texto_blanco" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Un scroll nuevo, para poder utilizar un scroll vertical que esté coordinado con el AppBar (donde se encuentra el botón de volver),
+     necesitaremos un NestedScrollView.-->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <!-- Esta vista obligará al CoordinatorLayout (con app:layout_behavior) a que, siempre que se haga scroll, el AppBarLayout se colapse.
+         Sin esto, no ocurriría el efecto que buscamos.-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Insertamos un CardView con la información del producto. -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="100dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/textViewNombreDetalle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre del Producto"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/texto_primario"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/crema"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/textViewPrecioDetalle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.00 €"
+                            android:textSize="26sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/rojo"
+                            android:fontFamily="sans-serif-medium" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divisor"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp" />
+
+                    <!-- Tendremos una etiqueta que anuncie cuándo comienza la descripción. -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/titulo_descripcion"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/texto_primario"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <TextView
+                        android:id="@+id/textViewDescripcionDetalle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Descripción detallada del producto"
+                        android:textSize="16sp"
+                        android:textColor="@color/texto_secundario"
+                        android:layout_marginTop="8dp"
+                        android:lineSpacingExtra="4dp"
+                        android:fontFamily="sans-serif-light" />
+                    <!-- Con "android:lineSpacingExtra" añadiremos más espacio entre las líneas. -->
+
+                    <!-- Tendremos una etiqueta que anuncie cuándo comienzan los ingredientes. -->
+                    <TextView
+                        android:id="@+id/textViewEtiquetaIngredientes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/titulo_ingredientes"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/texto_primario"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <TextView
+                        android:id="@+id/textViewIngredientes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lista de ingredientes del plato"
+                        android:textSize="16sp"
+                        android:textColor="@color/texto_secundario"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="sans-serif-light"
+                        android:lineSpacingExtra="2dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Finalmente, llegamos a la segunda parte más importante de esta sección: el botón flotante del carrito de la compra. Para crearlo, utilizaremos
+     ExtendedFloatingActionButton. Existen dos tipos de FloatingActionButton: extended(que muestra texto e iconos) y normal (que es solo un ícono circular). -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/botonAnadirCarrito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:text="@string/boton_agregar_carrito"
+        android:textStyle="bold"
+        android:textColor="@color/texto_blanco"
+        app:icon="@drawable/icono_anadir"
+        app:iconTint="@color/texto_blanco"
+        app:backgroundTint="@color/verde"
+        app:elevation="6dp" />
+    <!-- Colocaremos el botón en la esquina inferior derecha(android:layout_gravity="bottom|end"). Con "app:elevation="6dp"", le daremos más sombra al botón,
+     para aumentar el efecto de que está flotando.-->
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

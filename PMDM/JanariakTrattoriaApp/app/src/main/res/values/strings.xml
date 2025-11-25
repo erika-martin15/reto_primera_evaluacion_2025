@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Trattoria Restaurante by Janariak</string>
+
+    <!-- Pantalla de Login -->
+    <string name="titulo_app">Trattoria</string>
+    <string name="logo">Logo de Trattoria Restaurante</string>
+    <string name="subtitulo_app">Sabores Auténticos de Italia</string>
+    <string name="hint_usuario">Usuario</string>
+    <string name="hint_contrasena">Contraseña</string>
+    <string name="boton_entrar">Entrar</string>
+    <string name="error_usuario_vacio">Introduce un usuario valido, el campo no puede estar vacío</string>
+    <string name="error_contrasena_vacia">Introduce una contraseña, el campo no puede estar vacío</string>
+
+    <!-- Pantalla Principal -->
+    <string name="accesibilidad_boton_atras">Volver al inicio de sesión</string>
+    <string name="titulo_menu">Nuestro Menú</string>
+    <string name="categoria_entrantes">Entrantes</string>
+    <string name="categoria_principales">Principales</string>
+    <string name="categoria_postres">Postres</string>
+    <string name="categoria_bebidas">Bebidas</string>
+    <string name="ver_carrito">Ver Carrito (%1$d)</string>
+
+    <!-- Pantalla de Detalle -->
+    <string name="boton_agregar_carrito">Añadir a la Cesta</string>
+    <string name="titulo_descripcion">Descripción</string>
+    <string name="titulo_ingredientes">Ingredientes</string>
+    <string name="producto_agregado">%1$s añadido al carrito</string>
+    <string name="error_cargar_producto">Error al cargar el producto</string>
+    <string name="boton_volver">Volver</string>
+
+    <!-- Pantalla de Carrito -->
+    <string name="titulo_carrito">Mi Pedido</string>
+    <string name="total_productos">Total de productos: %1$d</string>
+    <string name="precio_total">Total: %.2f €</string>
+    <string name="boton_vaciar_carrito">Vaciar Carrito</string>
+    <string name="carrito_vacio">El carrito está vacío</string>
+    <string name="carrito_vaciado">Carrito vaciado</string>
+    <string name="boton_finalizar_pedido">Finalizar Pedido</string>
+    <string name="eliminar_producto">❌</string>
+
+</resources>

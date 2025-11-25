@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores principales del restaurante italiano -->
+    <color name="rojo">#D32F2F</color>
+    <color name="rojo_oscuro">#B71C1C</color>
+    <color name="verde">#388E3C</color>
+    <color name="verde_oscuro">#1B5E20</color>
+    <color name="dorado">#F57C00</color>
+    <color name="crema">#FFF8E1</color>
+
+    <!-- Fondos -->
+    <color name="fondo_claro">#FAFAFA</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="fondo_tarjeta">#FFFFFF</color>
+
+    <!-- Textos -->
+    <color name="texto_primario">#212121</color>
+    <color name="texto_secundario">#757575</color>
+    <color name="texto_blanco">#FFFFFF</color>
+
+    <!-- Elementos adicionales -->
+    <color name="sombra">#30000000</color>
+    <color name="divisor">#E0E0E0</color>
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.janariaktrattoriaapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+        tools:targetApi="31">
+
+        <!-- ========================================== -->
+        <!-- ACTIVIDAD DE LOGIN (Pantalla de Inicio)   -->
+        <!-- ========================================== -->
+        <!-- Esta es la primera actividad que se abre cuando se lanza la app -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+
+            <!-- Intent filter que hace que esta sea la actividad principal -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ========================================== -->
+        <!-- ACTIVIDAD PRINCIPAL (Menú del Restaurante) -->
+        <!-- ========================================== -->
+        <!-- Muestra las categorías y los productos -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/titulo_menu" />
+
+        <!-- ========================================== -->
+        <!-- ACTIVIDAD DE DETALLE (Información Producto)-->
+        <!-- ========================================== -->
+        <!-- Muestra la información completa de un producto -->
+        <activity
+            android:name=".DetalleProductoActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+
+            <!-- Soporte para navegación hacia arriba -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <!-- ========================================== -->
+        <!-- ACTIVIDAD DEL CARRITO (Mi Pedido)         -->
+        <!-- ========================================== -->
+        <!-- Muestra los productos añadidos al carrito -->
+        <activity
+            android:name=".CarritoActivity"
+            android:exported="false"
+            android:label="@string/titulo_carrito"
+            android:parentActivityName=".MainActivity">
+
+            <!-- Soporte para navegación hacia arriba -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+    </application>
+
+</manifest>

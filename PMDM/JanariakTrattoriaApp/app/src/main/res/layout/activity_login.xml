@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_claro">
+
+    <LinearLayout
+        android:id="@+id/layoutCabecera"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@color/rojo"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="48dp">
+
+        <!-- Logo, circular, del restaurante Trattoria. Añadiremos más sombra a la tarjeta, para que destaque (app:cardElevation). -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:cardCornerRadius="60dp"
+            app:cardElevation="8dp"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/logo"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <!-- Creamos el contenedor del Login -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutCabecera"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="-60dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        android:layout_marginBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <!-- Campo de usuario -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_usuario"
+                app:boxStrokeColor="@color/rojo"
+                app:hintTextColor="@color/rojo"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <!-- Añadiremos una pista para que el usuario sepa qué añadir en este campo de texto (android:hint). El color del campo cambiará
+                a rojo cuando esté activo (en uso, con app:boxStrokeColor). -->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="@color/texto_primario"
+                    android:drawablePadding="12dp" />
+                <!-- El tipo de dato que vamos a introducir en este campo va a ser de texto (android:inputType). -->
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Campo de contraseña -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_contrasena"
+                android:layout_marginTop="16dp"
+                app:boxStrokeColor="@color/rojo"
+                app:hintTextColor="@color/rojo"
+                app:endIconMode="password_toggle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <!-- Utilizaremos "app:endIconMode" para mostrar un "ojo" que oculte/muestre la contraseña. -->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextContrasena"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="@color/texto_primario"
+                    android:drawablePadding="12dp" />
+                <!-- El tipo de dato va a ser "contraseña". Esto hará que lo que escribamos se oculte automáticamente con puntos. -->
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Botón para entrar -->
+            <Button
+                android:id="@+id/botonLogin"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/boton_entrar"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/texto_blanco"
+                android:backgroundTint="@color/verde"
+                android:layout_marginTop="24dp"
+                app:cornerRadius="12dp"
+                android:elevation="4dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

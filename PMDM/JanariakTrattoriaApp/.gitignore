@@ -1,0 +1,17 @@
+# Directorios a ignorar
+.idea/
+.gradle/
+build/
+gradle/
+captures/
+local.properties
+
+# Archivos a ignorar
+*.iml
+gradlew
+gradlew.bat
+*.apk
+*.ap_
+*.dex
+.DS_Store
+
