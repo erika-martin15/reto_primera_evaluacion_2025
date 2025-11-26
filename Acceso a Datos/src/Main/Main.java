@@ -20,6 +20,7 @@ import Repositorios.RepositorioPlatos;
 
 public class Main {
 
+	@SuppressWarnings({ "static-access", "unused" })
 	public static void main(String[] args) {
 		try  {
 			RepositorioPedidos repositorioPedidos = new RepositorioPedidos();
@@ -71,10 +72,14 @@ public class Main {
 				
 				case 5 -> {
 					BackupPedidos.generar(repositorioPedidos);
+					break;
+				}
+					
+				default -> {
+					System.out.println("Opción no válida, por favor elige otra.");
 				}
 				
 			}
-				
 				
 			} while (option != 0);
 
@@ -92,10 +97,11 @@ public class Main {
 	    RepositorioPedidos repositorioPedidos = null;
 	    RepositorioCliente repositorioCliente = null;
 	    ArrayList<Plato> platos = null;
+	    @SuppressWarnings("resource")
 	    Scanner sc = new Scanner(System.in);
 
 	    try {
-	    	repositorioCliente = new RepositorioCliente();
+	        repositorioCliente = new RepositorioCliente();
 	        repositorioPedidos = new RepositorioPedidos();
 	        repositorioPlatos = new RepositorioPlatos();
 	        platos = repositorioPlatos.obtenerTodas();
@@ -106,11 +112,13 @@ public class Main {
 
 	    int opcion = 0;
 	    ArrayList<Pedido_Plato> pedido_Platos = new ArrayList<>();
+	    boolean cancelado = false; // bandera para saber si se cancela
 
 	    do {
 	        System.out.println("--- MENU ---");
 	        System.out.println("1.- Elegir plato");
-	        System.out.println("2.- Salir");
+	        System.out.println("2.- Finalizar pedido");
+	        System.out.println("3.- Cancelar pedido");
 	        opcion = sc.nextInt();
 	        sc.nextLine();
 
@@ -128,37 +136,49 @@ public class Main {
 	                sc.nextLine();
 
 	                int id_cliente = 1; 
-	             // Buscar si ya existe un Pedido_Plato con el mismo id_plato
 	                Pedido_Plato existente = pedido_Platos.stream()
 	                        .filter(pp -> pp.getId_plato() == id_plato)
 	                        .findFirst()
 	                        .orElse(null);
 
 	                if (existente != null) {
-	                    // Si existe, acumular cantidad
 	                    existente.setCantidad(existente.getCantidad() + cantidad);
 	                } else {
-	                    // Si no existe, crear uno nuevo
 	                    Pedido_Plato pedido_Plato = new Pedido_Plato(id_cliente, id_plato, cantidad);
 	                    pedido_Platos.add(pedido_Plato);
 	                }
 	                break;
-
+	                //Finalizar el pedido, en caso de no haber elegido ningun plato, no se puede finalizar
 	            case 2:
-	                System.out.println("Pedido finalizado.");
+	                if (pedido_Platos.isEmpty()) {
+	                    System.out.println("No puedes finalizar sin elegir al menos un plato.");
+	                    opcion = 0;
+	                } else {
+	                    System.out.println("Pedido finalizado.");
+	                }
+	                break;
+	                //Cancelar el pedido
+	            case 3:
+	                System.out.println(" Pedido cancelado.");
+	                cancelado = true;
 	                break;
 
 	            default:
 	                System.out.println("Opción no válida.");
 	        }
-	    } while (opcion != 2);
+	    } while ((opcion != 2 || pedido_Platos.isEmpty()) && !cancelado);
 
-	    //Calcula el detalle del pedido y el precio total
+	    
+	    if (cancelado) {
+	        return;
+	    }
+
+	    // Calcula el detalle del pedido y el precio total
 	    String detalle = "";
 	    float precio_total = 0;
 	    LocalDateTime fecha_hora = LocalDateTime.now();
 	    Timestamp timestamp = Timestamp.valueOf(fecha_hora);
-	    
+
 	    for (Pedido_Plato pp : pedido_Platos) {
 	        Plato plato = platos.stream()
 	                .filter(p -> p.getId() == pp.getId_plato())
@@ -171,31 +191,26 @@ public class Main {
 	        }
 	    }
 
-	    // Quitar el último " + "
 	    if (!detalle.isEmpty()) {
 	        detalle = detalle.substring(0, detalle.length() - 3);
 	    }
 
-	    //Inserta el pedido en la base de datos
+	    // Inserta el pedido en la base de datos
 	    try {
-	    	Cliente cliente = repositorioCliente.obtenerClientePorId(1);
-	    	Pedido pedido = new Pedido(1, cliente, detalle, timestamp, precio_total);
-	    	
+	        Cliente cliente = repositorioCliente.obtenerClientePorId(1);
+	        Pedido pedido = new Pedido(1, cliente, detalle, timestamp, precio_total);
+
 	        repositorioPedidos.insertarPedido(pedido);
 
 	        int id_pedido = repositorioPedidos.obtenerUltimoId();
-	        // Insertar cada plato en PEDIDOS_PLATOS
 	        for (Pedido_Plato pp : pedido_Platos) { 
 	            repositorioPedidos.insertarPedido_Plato(id_pedido, pp.getId_plato(), pp.getCantidad());
 	        }
 
-	        System.out.println("Pedido insertado correctamente.");
+	        System.out.println("✅ Pedido insertado correctamente.");
 	    } catch (SQLException e) {
 	        e.printStackTrace();
 	    }
 	}
 
-		
 }
-
-

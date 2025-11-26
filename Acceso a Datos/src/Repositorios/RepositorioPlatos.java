@@ -5,12 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
-
 import Clases.Plato;
 import Conector.ConectorBD;
-
-
 
 public class RepositorioPlatos {
 	

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<backup_pedidos fecha="2025-11-26">
+  <pedido id="1">
+    <id_cliente>1</id_cliente>
+    <detalle_pedido>
+      <plato>1 Pizza Margarita Grande</plato>
+      <plato>1 Ensalada César</plato>
+    </detalle_pedido>
+    <fecha_hora>2025-10-01 00:00:00.0</fecha_hora>
+    <precio_total>14.0</precio_total>
+  </pedido>
+  <pedido id="2">
+    <id_cliente>2</id_cliente>
+    <detalle_pedido>
+      <plato>2 Hamburguesas Clásicas</plato>
+    </detalle_pedido>
+    <fecha_hora>2025-10-02 00:00:00.0</fecha_hora>
+    <precio_total>14.0</precio_total>
+  </pedido>
+  <pedido id="3">
+    <id_cliente>3</id_cliente>
+    <detalle_pedido>
+      <plato>1 Pizza Margarita Mediana</plato>
+      <plato>1 Ensalada César</plato>
+    </detalle_pedido>
+    <fecha_hora>2025-10-03 00:00:00.0</fecha_hora>
+    <precio_total>12.0</precio_total>
+  </pedido>
+  <pedido id="4">
+    <id_cliente>1</id_cliente>
+    <detalle_pedido>
+      <plato>1 x Lasaña boloñesa</plato>
+    </detalle_pedido>
+    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
+    <precio_total>13.0</precio_total>
+  </pedido>
+  <pedido id="5">
+    <id_cliente>1</id_cliente>
+    <detalle_pedido>
+      <plato>5 x Tabla de embutidos</plato>
+    </detalle_pedido>
+    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
+    <precio_total>70.0</precio_total>
+  </pedido>
+  <pedido id="6">
+    <id_cliente>1</id_cliente>
+    <detalle_pedido>
+      <plato>98 x Limoncello</plato>
+      <plato>54 x Cannoli</plato>
+    </detalle_pedido>
+    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
+    <precio_total>760.0</precio_total>
+  </pedido>
+  <pedido id="7">
+    <id_cliente>1</id_cliente>
+    <detalle_pedido>
+      <plato>3 x Pizza margarita</plato>
+    </detalle_pedido>
+    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
+    <precio_total>33.0</precio_total>
+  </pedido>
+  <pedido id="8">
+    <id_cliente>1</id_cliente>
+    <detalle_pedido>
+      <plato/>
+    </detalle_pedido>
+    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
+    <precio_total>0.0</precio_total>
+  </pedido>
+  <pedido id="9">
+    <id_cliente>1</id_cliente>
+    <detalle_pedido>
+      <plato/>
+    </detalle_pedido>
+    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
+    <precio_total>0.0</precio_total>
+  </pedido>
+  <pedido id="10">
+    <id_cliente>1</id_cliente>
+    <detalle_pedido>
+      <plato>5 x Focaccia</plato>
+    </detalle_pedido>
+    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
+    <precio_total>30.0</precio_total>
+  </pedido>
+</backup_pedidos>
