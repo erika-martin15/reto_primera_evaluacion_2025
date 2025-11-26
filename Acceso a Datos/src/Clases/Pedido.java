@@ -60,10 +60,14 @@ public class Pedido {
 
 	@Override
 	public String toString() {
-		return "Pedido [id=" + id + " "
-				+ "Cliente=" + cliente.nombre
-				+ "detalle_pedido=" + detalle_pedido
-				+ ", fecha_hora=" + fecha_hora + ", precio_total=" + precio_total + "\n]";
+		return "\nPedido\n"
+				+ "|------------------|\n"
+				+  "ID ---> " + id 
+				+  "\n" + "Cliente ---> " + cliente.nombre
+				+  "\n" + "Detalle Pedido ---> " + detalle_pedido
+				+  "\n" + "Fecha Y Hora ---> " + fecha_hora 
+				+  "\n" + "Precio Total ---> " + precio_total + "€"
+				+  "\n|------------------|\n";
 	}
 	
 }

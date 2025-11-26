@@ -35,7 +35,6 @@ public class RepositorioPlatos {
             while (rs.next()) {
                 lista.add(new Plato(
                 	rs.getInt("id"),
-                	rs.getInt("id_producto"),
                     rs.getString("nombre"),
                     rs.getInt("precio")
                 ));
