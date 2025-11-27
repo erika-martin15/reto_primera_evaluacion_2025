@@ -33,7 +33,6 @@ public class RepositorioCliente {
             e.printStackTrace();
         }
     }
-
     public List<Cliente> obtenerClientes() {
         List<Cliente> lista = new ArrayList<>();
         String sql = "SELECT * FROM Clientes";
@@ -69,15 +68,12 @@ public class RepositorioCliente {
                 rs.getString("apellido"),
                 rs.getString("email"),
                 rs.getString("telefono")
-            );
+            	);
             }
         }
     } catch (SQLException e) {
         e.printStackTrace();
-    }
+    	}
     return cliente;
+    }
 }
-
-}
-
-

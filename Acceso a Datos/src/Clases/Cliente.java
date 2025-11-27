@@ -58,13 +58,14 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "\nCliente\n" +
-				"|------------------|\n"
-				+ "ID ---> " + id 
-				+ "\n" + "Nombre ---> " + nombre 
-				+ "\n" + "Apellido ---> " + apellido 
-				+ "\n" + "Email ---> " + email
-				+ "\n" + "Telefono ---> " + telefono 
-				+ "\n|------------------|\n";
+	    String linea = "+----+----------------------+----------------------+-----------------------------+---------------+";
+	    return "\n--- Cliente ---\n" +
+	           linea + "\n" +
+	           String.format("| %-2s | %-20s | %-20s | %-27s | %-13s |\n",
+	                         "ID", "Nombre", "Apellido", "Email", "Telefono") +
+	           linea + "\n" +
+	           String.format("| %-2d | %-20s | %-20s | %-27s | %-13s |\n",
+	                         id, nombre, apellido, email, telefono) +
+	          linea + "\n";
 	}
 }

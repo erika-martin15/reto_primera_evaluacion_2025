@@ -112,7 +112,7 @@ public class Main {
 
 	    int opcion = 0;
 	    ArrayList<Pedido_Plato> pedido_Platos = new ArrayList<>();
-	    boolean cancelado = false; // bandera para saber si se cancela
+	    boolean cancelado = false; 
 
 	    do {
 	        System.out.println("--- MENU ---");
@@ -131,6 +131,10 @@ public class Main {
 
 	                System.out.print("Elige el id del plato que quieras: ");
 	                int id_plato = sc.nextInt();
+	                if (id_plato <1 || id_plato > 16) {
+	                	System.out.println("Plato no válido. Inténtalo de nuevo.");
+	                	break;
+	                }
 	                System.out.print("Dime la cantidad: ");
 	                int cantidad = sc.nextInt();
 	                sc.nextLine();
@@ -148,7 +152,6 @@ public class Main {
 	                    pedido_Platos.add(pedido_Plato);
 	                }
 	                break;
-	                //Finalizar el pedido, en caso de no haber elegido ningun plato, no se puede finalizar
 	            case 2:
 	                if (pedido_Platos.isEmpty()) {
 	                    System.out.println("No puedes finalizar sin elegir al menos un plato.");
@@ -188,6 +191,11 @@ public class Main {
 	        if (plato != null) {
 	            detalle += pp.getCantidad() + " x " + plato.getNombre() + " + ";
 	            precio_total += plato.getPrecio() * pp.getCantidad();
+	            
+	            //Pequeños Detalles del pedido
+	            System.out.println("\n--- Detalles del pedido ---");
+	            System.out.println("Añadido al pedido: " + pp.getCantidad() + " x " + plato.getNombre());
+	    	    System.out.println("Fecha y hora del pedido: " + timestamp + "\n");
 	        }
 	    }
 
@@ -207,7 +215,7 @@ public class Main {
 	            repositorioPedidos.insertarPedido_Plato(id_pedido, pp.getId_plato(), pp.getCantidad());
 	        }
 
-	        System.out.println("✅ Pedido insertado correctamente.");
+	        System.out.println("Pedido insertado correctamente.");
 	    } catch (SQLException e) {
 	        e.printStackTrace();
 	    }

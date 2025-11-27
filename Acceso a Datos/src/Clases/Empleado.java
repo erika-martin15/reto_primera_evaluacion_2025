@@ -78,15 +78,14 @@ public class Empleado {
 
 	@Override
 	public String toString() {
-		return "\nEmpleado\n"
-				+ "|------------------|"
-				+ "\n" + "ID ---> " + id 
-				+ "\n" + "Nombre ---> " + nombre 
-				+ "\n" + "Apellido ---> " + apellido 
-				+ "\n" + "Email ---> "  + email 
-				+ "\n" + "Puesto ---> " + puesto 
-				+ "\n" + "Telefono ---> " + telefono 
-				+ "\n" + "Salario ---> " + salario + "€"
-				+ "\n|------------------|\n";
+		String linea = "+----+----------------------+----------------------+-----------------------------+---------------+---------------+---------------+";
+	    return "\n--- Empleado ---\n" +
+	           linea + "\n" +
+	           String.format("| %-2s | %-20s | %-20s | %-27s | %-13s | %-13s | %-13s |\n",
+	                         "ID", "Nombre", "Apellido", "Email", "puesto", "telefono", "salario") +
+	           linea + "\n" +
+	           String.format("| %-2d | %-20s | %-20s | %-27s | %-13s | %-13s | %-13s |\n",
+	                         id, nombre, apellido, email, puesto, telefono, salario) +
+	          linea + "\n";
 	}
 }

@@ -59,15 +59,15 @@ public class Pedido {
 	}
 
 	@Override
-	public String toString() {
-		return "\nPedido\n"
-				+ "|------------------|\n"
-				+  "ID ---> " + id 
-				+  "\n" + "Cliente ---> " + cliente.nombre
-				+  "\n" + "Detalle Pedido ---> " + detalle_pedido
-				+  "\n" + "Fecha Y Hora ---> " + fecha_hora 
-				+  "\n" + "Precio Total ---> " + precio_total + "€"
-				+  "\n|------------------|\n";
+	public String toString() {		
+		String linea = "+----+----------------------+-----------------------------------------------+-----------------------------+---------------+";
+	    return "\n--- Producto ---\n" +
+	           linea + "\n" +
+	           String.format("| %-2s | %-20s | %-45s | %-27s | %-13s |\n",
+	                         "ID", "Cliente", "Detalle Pedido", "Fecha y Hora", "Precio Total") +
+	           linea + "\n" +
+	           String.format("| %-2d | %-20s | %-45s | %-27s | %-13s |\n",
+	                         id, cliente.nombre, detalle_pedido, fecha_hora, precio_total) +
+	          linea + "\n";
 	}
-	
 }
