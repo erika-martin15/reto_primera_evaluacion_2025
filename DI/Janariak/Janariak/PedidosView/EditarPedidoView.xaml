@@ -1,0 +1,61 @@
+﻿<Window x:Class="Janariak.EditarPedidoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Trattoria - Editar Pedido" Height="500" Width="650">
+    
+    <!-- Fondo claro -->
+    <Grid Background="{StaticResource BrushFondoClaro}">
+        <!-- Tarjeta blanca centrada -->
+        <Border Style="{StaticResource EstiloTarjeta}"
+                Width="550"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+            <StackPanel>
+                <!-- Título -->
+                <TextBlock Text="Editar Pedido"
+                          Style="{StaticResource EstiloLabelTitulo}"
+                          HorizontalAlignment="Center"
+                          Margin="0,0,0,25"/>
+                
+                <!-- Campo Fecha y hora (solo lectura) -->
+                <Label Content="Fecha y hora del pedido:" Style="{StaticResource EstiloLabelCampo}"/>
+                <TextBox x:Name="txtFechaHora"
+                        Style="{StaticResource EstiloTextBox}"
+                        Height="40"
+                        IsReadOnly="True"
+                        Background="{StaticResource BrushFondoClaro}"
+                        Margin="0,0,0,10"/>
+
+                <!-- Campo Cliente ID -->
+                <Label Content="Cliente ID:" Style="{StaticResource EstiloLabelCampo}"/>
+                <TextBox x:Name="txtClienteId" 
+                        Style="{StaticResource EstiloTextBox}"
+                        Height="40"
+                        Margin="0,0,0,10"/>
+
+                <!-- Campo Importe -->
+                <Label Content="Importe (€):" Style="{StaticResource EstiloLabelCampo}"/>
+                <TextBox x:Name="txtPrecioTotal" 
+                        Style="{StaticResource EstiloTextBox}"
+                        Height="40"
+                        Margin="0,0,0,10"/>
+
+                <!-- Campo Estado/Detalle -->
+                <Label Content="Estado:" Style="{StaticResource EstiloLabelCampo}"/>
+                <TextBox x:Name="txtDetallePedido" 
+                        Style="{StaticResource EstiloTextBox}"
+                        Height="40"
+                        Margin="0,0,0,20"/>
+
+                <!-- Botón Guardar (verde, estilo principal) -->
+                <Button Content="Guardar"
+                       Style="{StaticResource EstiloBotonPrincipal}"
+                       Width="150"
+                       Height="45"
+                       Margin="0,10,0,0"
+                       HorizontalAlignment="Center"
+                       Click="BtnGuardar_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Bebidas\Agua.jpg" />
+    <None Remove="Resources\Bebidas\Limoncello.jpg" />
+    <None Remove="Resources\Bebidas\Moretti.jpg" />
+    <None Remove="Resources\Bebidas\Prosecco.jpg" />
+    <None Remove="Resources\Entrantes\Carpaccio.jpg" />
+    <None Remove="Resources\Entrantes\Focaccia.jpg" />
+    <None Remove="Resources\Entrantes\Tabla de embutidos.jpg" />
+    <None Remove="Resources\Postres\Cannoli.jpg" />
+    <None Remove="Resources\Postres\Copa de helado.jpg" />
+    <None Remove="Resources\Postres\Panna cotta.jpg" />
+    <None Remove="Resources\Postres\Tiramisu.jpg" />
+    <None Remove="Resources\Principales\Espagueti Carbonara.jpg" />
+    <None Remove="Resources\Principales\Lasaña boloñesa.jpg" />
+    <None Remove="Resources\Principales\Pizza margarita.jpg" />
+    <None Remove="Resources\Principales\Risotto de hongos.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Bebidas\Agua.jpg" />
+    <Content Include="Resources\Bebidas\Limoncello.jpg" />
+    <Content Include="Resources\Bebidas\Moretti.jpg" />
+    <Content Include="Resources\Bebidas\Prosecco.jpg" />
+    <Content Include="Resources\Entrantes\Carpaccio.jpg" />
+    <Content Include="Resources\Entrantes\Focaccia.jpg" />
+    <Content Include="Resources\Entrantes\Provoletta.jpg" />
+    <Content Include="Resources\Entrantes\Tabla de embutidos.jpg" />
+    <Content Include="Resources\Postres\Cannoli.jpg" />
+    <Content Include="Resources\Postres\Copa de helado.jpg" />
+    <Content Include="Resources\Postres\Panna cotta.jpg" />
+    <Content Include="Resources\Postres\Tiramisu.jpg" />
+    <Content Include="Resources\Principales\Espagueti Carbonara.jpg" />
+    <Content Include="Resources\Principales\Lasaña boloñesa.jpg" />
+    <Content Include="Resources\Principales\Pizza margarita.jpg" />
+    <Content Include="Resources\Principales\Risotto de hongos.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="9.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

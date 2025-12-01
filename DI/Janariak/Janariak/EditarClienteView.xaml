@@ -1,0 +1,62 @@
+﻿<Window x:Class="Janariak.EditarClienteView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Janariak"
+        mc:Ignorable="d"
+        Title="Trattoria - Editar Cliente" Height="500" Width="600">
+    
+    <!-- Fondo claro -->
+    <Grid Background="{StaticResource BrushFondoClaro}">
+        <!-- Tarjeta blanca centrada (como en la app móvil) -->
+        <Border Style="{StaticResource EstiloTarjeta}"
+                Width="500"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+            <StackPanel>
+                <!-- Título -->
+                <TextBlock Text="Datos del Cliente"
+                          Style="{StaticResource EstiloLabelTitulo}"
+                          HorizontalAlignment="Center"
+                          Margin="0,0,0,25"/>
+                
+                <!-- Campo Nombre -->
+                <Label Content="Nombre:" Style="{StaticResource EstiloLabelCampo}"/>
+                <TextBox x:Name="txtNombre" 
+                        Style="{StaticResource EstiloTextBox}"
+                        Height="40"
+                        Margin="0,0,0,10"/>
+                
+                <!-- Campo Apellido -->
+                <Label Content="Apellido:" Style="{StaticResource EstiloLabelCampo}"/>
+                <TextBox x:Name="txtApellido" 
+                        Style="{StaticResource EstiloTextBox}"
+                        Height="40"
+                        Margin="0,0,0,10"/>
+                
+                <!-- Campo Email -->
+                <Label Content="Email:" Style="{StaticResource EstiloLabelCampo}"/>
+                <TextBox x:Name="txtEmail" 
+                        Style="{StaticResource EstiloTextBox}"
+                        Height="40"
+                        Margin="0,0,0,10"/>
+                
+                <!-- Campo Teléfono -->
+                <Label Content="Teléfono:" Style="{StaticResource EstiloLabelCampo}"/>
+                <TextBox x:Name="txtTelefono" 
+                        Style="{StaticResource EstiloTextBox}"
+                        Height="40"
+                        Margin="0,0,0,20"/>
+                
+                <!-- Botón Guardar (verde, estilo principal) -->
+                <Button Content="Guardar" 
+                       Style="{StaticResource EstiloBotonPrincipal}"
+                       Width="150" 
+                       Height="45"
+                       HorizontalAlignment="Center" 
+                       Click="BtnGuardar_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
