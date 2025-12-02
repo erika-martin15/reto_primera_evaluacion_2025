@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginBottom="?android:attr/actionBarSize"
     android:background="@color/fondo_claro">
 
     <!-- Cabecera del carrito, que tendrá un color de fondo rojo.-->

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- El "Android Manifest" podría denominarse como la "tarjeta de identidad" de la aplicación. Le dice a nuestro dispositivo qué hace la app y qué pantallas la
+componen. Además, también se añaden en este apartado los permisos que necesita y los servicios que se mantendrán trabajando en segundo plano (en nuestro caso no hay).-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.janariaktrattoriaapp">
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,63 +12,45 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
         tools:targetApi="31">
-
-        <!-- ========================================== -->
-        <!-- ACTIVIDAD DE LOGIN (Pantalla de Inicio)   -->
-        <!-- ========================================== -->
-        <!-- Esta es la primera actividad que se abre cuando se lanza la app -->
+        <!-- Esta es la primera actividad que se abre cuando se lanza la app. Corresponde al Login. -->
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
 
-            <!-- Intent filter que hace que esta sea la actividad principal -->
+            <!-- Obligamos a la aplicación, con un intent filter, a que esta sea la actividad principal. -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- ========================================== -->
-        <!-- ACTIVIDAD PRINCIPAL (Menú del Restaurante) -->
-        <!-- ========================================== -->
-        <!-- Muestra las categorías y los productos -->
+        <!-- El MainActivity mostrará las categorías y los productos. -->
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/titulo_menu" />
-
-        <!-- ========================================== -->
-        <!-- ACTIVIDAD DE DETALLE (Información Producto)-->
-        <!-- ========================================== -->
-        <!-- Muestra la información completa de un producto -->
+        <!-- El DetalleProducto mostrará la información completa de un producto -->
         <activity
             android:name=".DetalleProductoActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity">
 
-            <!-- Soporte para navegación hacia arriba -->
+            <!-- Con la etiqueta "meta-data", estamos mandando a esta aplicación la información de quién es su "padre". Gracias a esto, sabe a donde
+            ir cuando le das a la flecha hacia atrás que tiene la pantalla. -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
-        <!-- ========================================== -->
-        <!-- ACTIVIDAD DEL CARRITO (Mi Pedido)         -->
-        <!-- ========================================== -->
-        <!-- Muestra los productos añadidos al carrito -->
+        <!-- El CarritoActivity mostrará los productos añadidos al carrito. -->
         <activity
             android:name=".CarritoActivity"
             android:exported="false"
             android:label="@string/titulo_carrito"
             android:parentActivityName=".MainActivity">
 
-            <!-- Soporte para navegación hacia arriba -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
     </application>
-
 </manifest>
