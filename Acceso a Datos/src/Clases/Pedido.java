@@ -71,8 +71,8 @@ public class Pedido {
 	            "ID", "Cliente", "Detalle Pedido", "Fecha y Hora", "Precio Total"));
 	    sb.append(linea).append("\n");
 
-	    // Dividir el detalle en platos separados por '+'
-	    String[] platos = detalle_pedido.split("\\+");
+	    // Dividir el detalle en platos separados por salto de línea
+	    String[] platos = detalle_pedido.split("\\r?\\n");
 
 	    for (int i = 0; i < platos.length; i++) {
 	        String plato = platos[i].trim();
@@ -81,14 +81,12 @@ public class Pedido {
 	            sb.append(String.format("| %-2d | %-20s | %-45s | %-27s | %-13.2f |\n",
 	                    id, cliente.nombre, plato, fecha_hora, precio_total));
 	        } else {
-	            // Líneas siguientes: solo detalle del plato
+	            // Líneas siguientes: solo detalle del plato, dejando las demás columnas vacías
 	            sb.append(String.format("| %-2s | %-20s | %-45s | %-27s | %-13s |\n",
 	                    "", "", plato, "", ""));
 	        }
 	    }
-
 	    sb.append(linea).append("\n");
 	    return sb.toString();
 	}
-
 }

@@ -223,9 +223,9 @@ public class Main {
 
 	        if (plato != null) {
 	            detalleBuilder.append(pp.getCantidad())
-	                 .append(" ")
-	                 .append(plato.getNombre())
-	                 .append("\n"); // cada plato en una línea
+	                          .append(" x ")
+	                          .append(plato.getNombre())
+	                          .append("\n"); // cada plato en una línea
 	            precio_total += plato.getPrecio() * pp.getCantidad();
 	        }
 	    }
@@ -249,9 +249,11 @@ public class Main {
 	        for (Pedido_Plato pp : pedido_Platos) { 
 	            repositorioPedidos.insertarPedido_Plato(id_pedido, pp.getId_plato(), pp.getCantidad());
 	        }
+
 	        System.out.println("Pedido insertado correctamente.");
 	    } catch (SQLException e) {
 	        e.printStackTrace();
 	    }
 	}
+
 }
