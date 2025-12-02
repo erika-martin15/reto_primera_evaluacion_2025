@@ -9,6 +9,7 @@ public class Empleado {
 	public int telefono;
 	public int salario;
 	
+	// Constructor de empleado
 	public Empleado(int id, String nombre, String apellido, String email, String puesto, int telefono, int salario) {
 		super();
 		this.id = id;
@@ -76,6 +77,7 @@ public class Empleado {
 		this.salario = salario;
 	}
 
+	// Representación del empleado
 	@Override
 	public String toString() {
 		String linea = "+----+----------------------+----------------------+-----------------------------+---------------+---------------+---------------+";

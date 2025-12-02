@@ -6,6 +6,7 @@ public class Pedido_Plato {
 	private int id_plato;
 	private int cantidad;	
 	
+	// Constructor de Pedido_Plato
 	public Pedido_Plato(int id_pedido, int id_plato, int cantidad) {
 		super();
 		this.id_pedido = id_pedido;
@@ -30,6 +31,8 @@ public class Pedido_Plato {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
+	
+	// Representacion de pedido_plato
 	@Override
 	public String toString() {
 		return "Pedido_Producto [id_pedido=" + id_pedido + ", id_plato=" + id_plato + ", cantidad=" + cantidad + "]";

@@ -7,6 +7,7 @@ public class Cliente {
 	public String email;
 	public String telefono;
 	
+	// Constructor de cliente
 	public Cliente(int id, String nombre, String apellido, String email, String telefono) {
 		super();
 		this.id = id;
@@ -56,6 +57,7 @@ public class Cliente {
 		this.telefono = telefono;
 	}
 
+	// Representación del cliente
 	@Override
 	public String toString() {
 	    String linea = "+----+----------------------+----------------------+-----------------------------+---------------+";

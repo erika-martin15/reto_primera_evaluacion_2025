@@ -33,65 +33,68 @@ public class Main {
 			Scanner sc = new Scanner(System.in);
 			int option;
 			do {
-				System.out.println("\n ---Restaurante---");
-				System.out.println("0 --> SALIR ");
-				System.out.println("1 --> Ver clientes");
-				System.out.println("2 --> Ver empleados");
-				System.out.println("3 --> Insertar pedido");
-				System.out.println("4 --> Consultar pedidos");
-				System.out.println("5 --> Generar backup de pedidos");
-				System.out.println("-------------------------------\n");
-				option = Integer.parseInt(sc.nextLine());
-				
-				switch (option) {
-				case 0 -> {
-					System.out.println("Cerrando el programa...");
-					break;
-				}
-				case 1 -> {
-					System.out.println("--- Lista de Clientes ---");
-					List<Cliente> clientes = repositorioCliente.obtenerClientes();
-					System.out.println(clientes);
-					break;	
-				}
-				case 2 -> {
-					System.out.println("--- Lista de Empleados ---");
-					List<Empleado> empleado = repositorioEmpleados.obtenerEmpleados();
-					System.out.println(empleado);
-					break;
-				}
-				case 3 -> {
-					insertarPedido();		
-				}
-				case 4 -> {
-					System.out.println("--- Lista de Pedidos ---");
-					ArrayList<Pedido> pedidos = repositorioPedidos.obtenerTodos();					
-					System.out.println(pedidos);
-					break;
-				}
-				
-				case 5 -> {
-					BackupPedidos.generar(repositorioPedidos);
-					break;
-				}
-					
-				default -> {
-					System.out.println("Opción no válida, por favor elige otra.");
-				}
-				
-			}
-				
-			} while (option != 0);
+			    System.out.println("\n ---Restaurante---");
+			    System.out.println("0 --> SALIR ");
+			    System.out.println("1 --> Ver clientes");
+			    System.out.println("2 --> Ver empleados");
+			    System.out.println("3 --> Insertar pedido");
+			    System.out.println("4 --> Consultar pedidos");
+			    System.out.println("5 --> Generar backup de pedidos");
+			    System.out.println("-------------------------------\n");
+			    option = -1;
+			    String input = sc.nextLine();
+
+			    try {
+			        option = Integer.parseInt(input);
+			    } catch (NumberFormatException e) {
+			        System.out.println("Entrada inválida. Por favor, introduce un número.");
+			        continue; 
+			    }
+
+			    if (option < 0 || option > 5) {
+			        System.out.println("Opción no válida, por favor elige otra.");
+			        continue;
+			    }
+
+			    switch (option) {
+			        case 0 -> {
+			            System.out.println("Cerrando el programa...");
+			            break;
+			        }
+			        case 1 -> {
+			            System.out.println("--- Lista de Clientes ---");
+			            List<Cliente> clientes = repositorioCliente.obtenerClientes();
+			            System.out.println(clientes);
+			        	}
+			       	case 2 -> {
+			            System.out.println("--- Lista de Empleados ---");
+			            List<Empleado> empleados = repositorioEmpleados.obtenerEmpleados();
+			            System.out.println(empleados);
+			       		}
+			        case 3 -> {
+			            insertarPedido();
+			        	}
+			        case 4 -> {
+			            System.out.println("--- Lista de Pedidos ---");
+			            ArrayList<Pedido> pedidos = repositorioPedidos.obtenerTodos();
+			            System.out.println(pedidos);
+			        	}
+			        case 5 -> {
+			            BackupPedidos.generar(repositorioPedidos);
+			        	}
+			    	}
+				} while (option != 0);
+
 
 			sc.close();
 			bd.cerrarConexion();
 				
 		} catch (Exception e) {
-			
-		
+			e.printStackTrace();
 		}
 	}
 	
+	// Método para insertar un nuevo pedido
 	private static void insertarPedido() {
 	    RepositorioPlatos repositorioPlatos = null;
 	    RepositorioPedidos repositorioPedidos = null;
@@ -114,13 +117,20 @@ public class Main {
 	    ArrayList<Pedido_Plato> pedido_Platos = new ArrayList<>();
 	    boolean cancelado = false; 
 
+	    // Menú para elegir platos
 	    do {
 	        System.out.println("--- MENU ---");
 	        System.out.println("1.- Elegir plato");
 	        System.out.println("2.- Finalizar pedido");
 	        System.out.println("3.- Cancelar pedido");
-	        opcion = sc.nextInt();
-	        sc.nextLine();
+	        String input = sc.nextLine();
+	                            
+	        try {
+	            opcion = Integer.parseInt(input);
+	        } catch (NumberFormatException e) {
+	            System.out.println("Entrada inválida. No se puede introducir letras. Volviendo al menú.");
+	            continue;
+	        }
 
 	        switch (opcion) {
 	            case 1:
@@ -130,15 +140,41 @@ public class Main {
 	                }
 
 	                System.out.print("Elige el id del plato que quieras: ");
-	                int id_plato = sc.nextInt();
-	                if (id_plato <1 || id_plato > 16) {
-	                	System.out.println("Plato no válido. Inténtalo de nuevo.");
-	                	break;
+	                String idInput = sc.nextLine();
+	                int id_plato;
+	                try {
+	                    id_plato = Integer.parseInt(idInput);
+	                } catch (NumberFormatException e) {
+	                    System.out.println("Entrada inválida. Debes introducir un número de plato. Volviendo al menú.");
+	                    break;
 	                }
-	                System.out.print("Dime la cantidad: ");
-	                int cantidad = sc.nextInt();
-	                sc.nextLine();
 
+	                // Verificar que el id existe en la lista de platos
+	                Plato elegido = platos.stream()
+	                        .filter(p -> p.getId() == id_plato)
+	                        .findFirst()
+	                        .orElse(null);
+	                if (elegido == null) {
+	                    System.out.println("Plato no válido. Inténtalo de nuevo.");
+	                    break;
+	                }
+
+	                // Guardar la cantidad
+	                System.out.print("Dime la cantidad: ");
+	                String cantidadInput = sc.nextLine();
+	                int cantidad;
+	                try {
+	                    cantidad = Integer.parseInt(cantidadInput);
+	                } catch (NumberFormatException e) {
+	                    System.out.println("Entrada inválida. La cantidad debe ser un número. Volviendo al menú.");
+	                    break;
+	                }
+	                if (cantidad <= 0) {
+	                    System.out.println("Cantidad no válida. Debe ser mayor que 0.");
+	                    break;
+	                }
+
+	                // Añadir al pedido el plato seleccionado
 	                int id_cliente = 1; 
 	                Pedido_Plato existente = pedido_Platos.stream()
 	                        .filter(pp -> pp.getId_plato() == id_plato)
@@ -160,24 +196,21 @@ public class Main {
 	                    System.out.println("Pedido finalizado.");
 	                }
 	                break;
-	                //Cancelar el pedido
 	            case 3:
-	                System.out.println(" Pedido cancelado.");
+	                System.out.println("Pedido cancelado.");
 	                cancelado = true;
 	                break;
-
 	            default:
 	                System.out.println("Opción no válida.");
 	        }
 	    } while ((opcion != 2 || pedido_Platos.isEmpty()) && !cancelado);
-
 	    
 	    if (cancelado) {
 	        return;
 	    }
 
 	    // Calcula el detalle del pedido y el precio total
-	    String detalle = "";
+	    StringBuilder detalleBuilder = new StringBuilder();
 	    float precio_total = 0;
 	    LocalDateTime fecha_hora = LocalDateTime.now();
 	    Timestamp timestamp = Timestamp.valueOf(fecha_hora);
@@ -189,19 +222,21 @@ public class Main {
 	                .orElse(null);
 
 	        if (plato != null) {
-	            detalle += pp.getCantidad() + " x " + plato.getNombre() + " + ";
+	            detalleBuilder.append(pp.getCantidad())
+	                 .append(" ")
+	                 .append(plato.getNombre())
+	                 .append("\n"); // cada plato en una línea
 	            precio_total += plato.getPrecio() * pp.getCantidad();
-	            
-	            //Pequeños Detalles del pedido
-	            System.out.println("\n--- Detalles del pedido ---");
-	            System.out.println("Añadido al pedido: " + pp.getCantidad() + " x " + plato.getNombre());
-	    	    System.out.println("Fecha y hora del pedido: " + timestamp + "\n");
 	        }
 	    }
 
-	    if (!detalle.isEmpty()) {
-	        detalle = detalle.substring(0, detalle.length() - 3);
-	    }
+	    String detalle = detalleBuilder.toString().trim();
+
+	    // Mostrar una sola sección de detalles
+	    System.out.println("\n--- Detalles del pedido ---");
+	    System.out.println(detalle);
+	    System.out.println("Fecha y hora del pedido: " + timestamp);
+	    System.out.println("Precio total: " + precio_total + "€\n");
 
 	    // Inserta el pedido en la base de datos
 	    try {
@@ -209,16 +244,14 @@ public class Main {
 	        Pedido pedido = new Pedido(1, cliente, detalle, timestamp, precio_total);
 
 	        repositorioPedidos.insertarPedido(pedido);
-
 	        int id_pedido = repositorioPedidos.obtenerUltimoId();
+	            
 	        for (Pedido_Plato pp : pedido_Platos) { 
 	            repositorioPedidos.insertarPedido_Plato(id_pedido, pp.getId_plato(), pp.getCantidad());
 	        }
-
 	        System.out.println("Pedido insertado correctamente.");
 	    } catch (SQLException e) {
 	        e.printStackTrace();
 	    }
 	}
-
 }

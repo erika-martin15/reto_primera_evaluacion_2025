@@ -9,6 +9,7 @@ public class Pedido {
 	public Timestamp fecha_hora;
 	public float precio_total;
 	
+	// Constructor de Pedido
 	public Pedido(int id, Cliente cliente, String detalle_pedido, Timestamp fecha_hora, float precio_total) {
 		super();
 		this.id = id; 
@@ -58,16 +59,36 @@ public class Pedido {
 		this.precio_total = precio_total;
 	}
 
+	// Representacion de Pedido
 	@Override
-	public String toString() {		
-		String linea = "+----+----------------------+-----------------------------------------------+-----------------------------+---------------+";
-	    return "\n--- Producto ---\n" +
-	           linea + "\n" +
-	           String.format("| %-2s | %-20s | %-45s | %-27s | %-13s |\n",
-	                         "ID", "Cliente", "Detalle Pedido", "Fecha y Hora", "Precio Total") +
-	           linea + "\n" +
-	           String.format("| %-2d | %-20s | %-45s | %-27s | %-13s |\n",
-	                         id, cliente.nombre, detalle_pedido, fecha_hora, precio_total) +
-	          linea + "\n";
+	public String toString() {
+	    String linea = "+----+----------------------+-----------------------------------------------+-----------------------------+---------------+";
+	    StringBuilder sb = new StringBuilder();
+
+	    sb.append("\n--- Pedido ---\n");
+	    sb.append(linea).append("\n");
+	    sb.append(String.format("| %-2s | %-20s | %-45s | %-27s | %-13s |\n",
+	            "ID", "Cliente", "Detalle Pedido", "Fecha y Hora", "Precio Total"));
+	    sb.append(linea).append("\n");
+
+	    // Dividir el detalle en platos separados por '+'
+	    String[] platos = detalle_pedido.split("\\+");
+
+	    for (int i = 0; i < platos.length; i++) {
+	        String plato = platos[i].trim();
+	        if (i == 0) {
+	            // Primera línea: mostramos todo
+	            sb.append(String.format("| %-2d | %-20s | %-45s | %-27s | %-13.2f |\n",
+	                    id, cliente.nombre, plato, fecha_hora, precio_total));
+	        } else {
+	            // Líneas siguientes: solo detalle del plato
+	            sb.append(String.format("| %-2s | %-20s | %-45s | %-27s | %-13s |\n",
+	                    "", "", plato, "", ""));
+	        }
+	    }
+
+	    sb.append(linea).append("\n");
+	    return sb.toString();
 	}
+
 }

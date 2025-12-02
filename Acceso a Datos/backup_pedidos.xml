@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<backup_pedidos fecha="2025-11-27">
+<backup_pedidos fecha="2025-12-02">
   <pedido id="1">
     <id_cliente>1</id_cliente>
     <detalle_pedido>
@@ -12,7 +12,7 @@
   <pedido id="2">
     <id_cliente>2</id_cliente>
     <detalle_pedido>
-      <plato>2 Hamburguesas Clásicas</plato>
+      <plato>2 Moretti</plato>
     </detalle_pedido>
     <fecha_hora>2025-10-02 00:00:00.0</fecha_hora>
     <precio_total>14.0</precio_total>
@@ -29,130 +29,37 @@
   <pedido id="4">
     <id_cliente>1</id_cliente>
     <detalle_pedido>
-      <plato>1 x Lasaña boloñesa</plato>
+      <plato>1 Panna Cotta</plato>
     </detalle_pedido>
-    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
-    <precio_total>13.0</precio_total>
+    <fecha_hora>2025-12-02 12:20:55.0</fecha_hora>
+    <precio_total>5.0</precio_total>
   </pedido>
   <pedido id="5">
     <id_cliente>1</id_cliente>
     <detalle_pedido>
-      <plato>5 x Tabla de embutidos</plato>
+      <plato>23 Espagueti Carbonara</plato>
     </detalle_pedido>
-    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
-    <precio_total>70.0</precio_total>
+    <fecha_hora>2025-12-02 12:21:51.0</fecha_hora>
+    <precio_total>276.0</precio_total>
   </pedido>
   <pedido id="6">
     <id_cliente>1</id_cliente>
     <detalle_pedido>
-      <plato>98 x Limoncello</plato>
-      <plato>54 x Cannoli</plato>
+      <plato>4 Panna Cotta</plato>
     </detalle_pedido>
-    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
-    <precio_total>760.0</precio_total>
+    <fecha_hora>2025-12-02 12:22:08.0</fecha_hora>
+    <precio_total>20.0</precio_total>
   </pedido>
   <pedido id="7">
     <id_cliente>1</id_cliente>
     <detalle_pedido>
-      <plato>3 x Pizza margarita</plato>
+      <plato>1 Pizza margarita</plato>
+      <plato>1 Risotto de hongos</plato>
+      <plato>1 Espagueti Carbonara</plato>
+      <plato>1 Provoletta</plato>
+      <plato>1 Focaccia</plato>
     </detalle_pedido>
-    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
-    <precio_total>33.0</precio_total>
-  </pedido>
-  <pedido id="8">
-    <id_cliente>1</id_cliente>
-    <detalle_pedido>
-      <plato/>
-    </detalle_pedido>
-    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
-    <precio_total>0.0</precio_total>
-  </pedido>
-  <pedido id="9">
-    <id_cliente>1</id_cliente>
-    <detalle_pedido>
-      <plato/>
-    </detalle_pedido>
-    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
-    <precio_total>0.0</precio_total>
-  </pedido>
-  <pedido id="10">
-    <id_cliente>1</id_cliente>
-    <detalle_pedido>
-      <plato>5 x Focaccia</plato>
-    </detalle_pedido>
-    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
-    <precio_total>30.0</precio_total>
-  </pedido>
-  <pedido id="11">
-    <id_cliente>1</id_cliente>
-    <detalle_pedido>
-      <plato/>
-    </detalle_pedido>
-    <fecha_hora>2025-11-26 00:00:00.0</fecha_hora>
-    <precio_total>0.0</precio_total>
-  </pedido>
-  <pedido id="12">
-    <id_cliente>1</id_cliente>
-    <detalle_pedido>
-      <plato>7 x Cannoli</plato>
-    </detalle_pedido>
-    <fecha_hora>2025-11-27 00:00:00.0</fecha_hora>
-    <precio_total>35.0</precio_total>
-  </pedido>
-  <pedido id="13">
-    <id_cliente>1</id_cliente>
-    <detalle_pedido>
-      <plato>2 x Limoncello</plato>
-    </detalle_pedido>
-    <fecha_hora>2025-11-27 00:00:00.0</fecha_hora>
-    <precio_total>10.0</precio_total>
-  </pedido>
-  <pedido id="14">
-    <id_cliente>1</id_cliente>
-    <detalle_pedido>
-      <plato>3 x Pizza margarita</plato>
-    </detalle_pedido>
-    <fecha_hora>2025-11-27 00:00:00.0</fecha_hora>
-    <precio_total>33.0</precio_total>
-  </pedido>
-  <pedido id="15">
-    <id_cliente>1</id_cliente>
-    <detalle_pedido>
-      <plato/>
-    </detalle_pedido>
-    <fecha_hora>2025-11-27 00:00:00.0</fecha_hora>
-    <precio_total>0.0</precio_total>
-  </pedido>
-  <pedido id="16">
-    <id_cliente>1</id_cliente>
-    <detalle_pedido>
-      <plato>4 x Copa de helado</plato>
-    </detalle_pedido>
-    <fecha_hora>2025-11-27 00:00:00.0</fecha_hora>
-    <precio_total>16.0</precio_total>
-  </pedido>
-  <pedido id="17">
-    <id_cliente>1</id_cliente>
-    <detalle_pedido>
-      <plato>450 x Copa de helado</plato>
-    </detalle_pedido>
-    <fecha_hora>2025-11-27 00:00:00.0</fecha_hora>
-    <precio_total>1800.0</precio_total>
-  </pedido>
-  <pedido id="18">
-    <id_cliente>1</id_cliente>
-    <detalle_pedido>
-      <plato>3 x Copa de helado</plato>
-    </detalle_pedido>
-    <fecha_hora>2025-11-27 00:00:00.0</fecha_hora>
-    <precio_total>12.0</precio_total>
-  </pedido>
-  <pedido id="19">
-    <id_cliente>1</id_cliente>
-    <detalle_pedido>
-      <plato>5670 x Provoletta</plato>
-    </detalle_pedido>
-    <fecha_hora>2025-11-27 00:00:00.0</fecha_hora>
-    <precio_total>45360.0</precio_total>
+    <fecha_hora>2025-12-02 12:22:56.0</fecha_hora>
+    <precio_total>51.0</precio_total>
   </pedido>
 </backup_pedidos>

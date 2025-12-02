@@ -11,10 +11,12 @@ import Conector.ConectorBD;
 
 public class RepositorioEmpleados {
 	
+	// Conectar a la base de datos
 	public RepositorioEmpleados() {
         ConectorBD.conectar();
     }
 
+	// Obtener los empleados mediante una consulta
     public List<Empleado> obtenerEmpleados() {
         List<Empleado> lista = new ArrayList<>();
         String sql = "SELECT * FROM Empleados";

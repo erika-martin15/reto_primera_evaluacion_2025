@@ -6,6 +6,7 @@ public class Plato {
 	public String nombre;
 	public int precio;
     
+	// Constructor de Plato
     public Plato(int id, String nombre, int precio) {
 		super();
 		this.id = id;
@@ -37,4 +38,9 @@ public class Plato {
 		this.precio = precio;
 	}
 
+	// Representacion de plato
+	@Override
+	public String toString() {
+		return "Plato [id=" + id + ", nombre=" + nombre + ", precio=" + precio + "]";
+	}
 }

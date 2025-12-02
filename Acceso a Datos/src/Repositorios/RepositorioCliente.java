@@ -13,6 +13,7 @@ import Clases.Cliente;
 
 public class RepositorioCliente {
 	
+	// Coectar a la base de datos
 	public RepositorioCliente() {
         try {
             ConectorBD.conectar();
@@ -21,6 +22,7 @@ public class RepositorioCliente {
         }
     }
 
+	// Insertar un cliente mediante una consulta
     public void insertarCliente(Cliente c) {
         String sql = "INSERT INTO Clientes (nombre, apellido, email, telefono) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = ConectorBD.getConexion().prepareStatement(sql)) {
@@ -33,6 +35,8 @@ public class RepositorioCliente {
             e.printStackTrace();
         }
     }
+    
+    // Obtener los clientes mediante una consulta
     public List<Cliente> obtenerClientes() {
         List<Cliente> lista = new ArrayList<>();
         String sql = "SELECT * FROM Clientes";
@@ -49,11 +53,12 @@ public class RepositorioCliente {
             }
         } catch (SQLException e) {
            e.printStackTrace();
-        }
+        	}
 
         return lista;
     }
     
+    // Obtener un cliente por su ID mediante una consulta
     public Cliente obtenerClientePorId(int id_cliente) {
     Cliente cliente = null;
     String sql = "SELECT * FROM Clientes WHERE id = ?";
