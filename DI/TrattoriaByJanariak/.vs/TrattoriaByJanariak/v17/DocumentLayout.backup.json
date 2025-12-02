@@ -7,8 +7,32 @@
       "RelativeMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|solutionrelative:trattoriabyjanariak\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|c:\\users\\2dam3\\source\\repos\\trattoriabyjanariak\\trattoriabyjanariak\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|solutionrelative:trattoriabyjanariak\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|c:\\users\\2dam3\\source\\repos\\trattoriabyjanariak\\trattoriabyjanariak\\estilos\\estilos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|solutionrelative:trattoriabyjanariak\\estilos\\estilos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|c:\\users\\2dam3\\source\\repos\\trattoriabyjanariak\\trattoriabyjanariak\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|solutionrelative:trattoriabyjanariak\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|c:\\users\\2dam3\\source\\repos\\trattoriabyjanariak\\trattoriabyjanariak\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|solutionrelative:trattoriabyjanariak\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|c:\\users\\2dam3\\source\\repos\\trattoriabyjanariak\\trattoriabyjanariak\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|solutionrelative:trattoriabyjanariak\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|c:\\users\\2dam3\\source\\repos\\trattoriabyjanariak\\trattoriabyjanariak\\pedidosview\\crearpedido.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|solutionrelative:trattoriabyjanariak\\pedidosview\\crearpedido.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|c:\\users\\2dam3\\source\\repos\\trattoriabyjanariak\\trattoriabyjanariak\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|solutionrelative:trattoriabyjanariak\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +42,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Home.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\Home.xaml.cs",
+              "RelativeDocumentMoniker": "TrattoriaByJanariak\\Home.xaml.cs",
+              "ToolTip": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\Home.xaml.cs",
+              "RelativeToolTip": "TrattoriaByJanariak\\Home.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T03:46:31.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\App.xaml",
+              "RelativeDocumentMoniker": "TrattoriaByJanariak\\App.xaml",
+              "ToolTip": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\App.xaml",
+              "RelativeToolTip": "TrattoriaByJanariak\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-02T03:18:44.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Estilos.xaml",
+              "DocumentMoniker": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\Estilos\\Estilos.xaml",
+              "RelativeDocumentMoniker": "TrattoriaByJanariak\\Estilos\\Estilos.xaml",
+              "ToolTip": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\Estilos\\Estilos.xaml",
+              "RelativeToolTip": "TrattoriaByJanariak\\Estilos\\Estilos.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-02T03:17:54.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "TrattoriaByJanariak\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\MainWindow.xaml.cs",
+              "RelativeToolTip": "TrattoriaByJanariak\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T03:13:59.557Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -34,7 +108,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "Home.xaml",
+              "DocumentMoniker": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\Home.xaml",
+              "RelativeDocumentMoniker": "TrattoriaByJanariak\\Home.xaml",
+              "ToolTip": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\Home.xaml",
+              "RelativeToolTip": "TrattoriaByJanariak\\Home.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-02T03:46:35.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "CrearPedido.xaml",
               "DocumentMoniker": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\PedidosView\\CrearPedido.xaml",
               "RelativeDocumentMoniker": "TrattoriaByJanariak\\PedidosView\\CrearPedido.xaml",
@@ -42,6 +128,19 @@
               "RelativeToolTip": "TrattoriaByJanariak\\PedidosView\\CrearPedido.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-12-02T02:37:52.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Conexion.cs",
+              "DocumentMoniker": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\Conexion.cs",
+              "RelativeDocumentMoniker": "TrattoriaByJanariak\\Conexion.cs",
+              "ToolTip": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\Conexion.cs",
+              "RelativeToolTip": "TrattoriaByJanariak\\Conexion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T03:22:08.512Z",
               "EditorCaption": ""
             }
           ]

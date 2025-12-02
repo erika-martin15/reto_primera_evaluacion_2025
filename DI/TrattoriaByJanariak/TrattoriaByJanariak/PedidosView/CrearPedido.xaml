@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrattoriaByJanariak.PedidosView"
         mc:Ignorable="d"
-        Title="CrearPedido" Height="450" Width="800">
+        Title="CrearPedido" Height="500" Width="1000">
     <Grid Background="{StaticResource BrushFondoClaro}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -98,10 +98,6 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Tu Pedido" 
-                          Style="{StaticResource EstiloLabelTitulo}"
-                          Grid.Row="0"
-                          Margin="0,0,0,15"/>
                 <ListBox x:Name="listaCarrito" 
                         Grid.Row="1" 
                         Style="{StaticResource EstiloListBox}"
@@ -121,12 +117,12 @@
                                           Foreground="{StaticResource BrushTextoPrimario}"
                                           VerticalAlignment="Center"
                                           TextWrapping="Wrap"/>
-                                <TextBlock Text="x{Binding Cantidad}" 
-                                          Grid.Column="1"
-                                          Foreground="{StaticResource BrushTextoSecundario}"
-                                          Margin="10,0"
-                                          VerticalAlignment="Center"
-                                          FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding Cantidad, StringFormat='x{0}'}"
+                                           Grid.Column="1"
+                                           Foreground="{StaticResource BrushTextoSecundario}"
+                                           Margin="10,0"
+                                           VerticalAlignment="Center"
+                                           FontWeight="SemiBold"/>
                                 <TextBlock Text="{Binding TotalLinea, StringFormat='{}{0:C}'}" 
                                           Grid.Column="2"
                                           Foreground="{StaticResource BrushVerde}"

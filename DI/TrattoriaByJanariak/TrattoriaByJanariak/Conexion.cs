@@ -4,7 +4,7 @@ namespace TrattoriaByJanariak
 {
     class Conexion
     {
-        private static string connectionString = "server=localhost;database=JANARIAK;uid=root;pwd=1234;";
+        private static string connectionString = "server=localhost;database=JANARIAK;uid=root;pwd=root;";
 
         public static MySqlConnection ObtenerConexion()
         {

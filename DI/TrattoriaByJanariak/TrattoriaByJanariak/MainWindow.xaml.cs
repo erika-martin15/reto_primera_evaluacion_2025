@@ -17,8 +17,6 @@ namespace TrattoriaByJanariak
 
             if (usuario == "admin" && password == "1234")
             {
-
-                // Abrir otra ventana
                 Home ventana = new Home();
                 ventana.Show();
                 this.Close();
