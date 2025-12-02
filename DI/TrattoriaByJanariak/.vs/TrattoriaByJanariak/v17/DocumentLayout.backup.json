@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|c:\\users\\2dam3\\source\\repos\\trattoriabyjanariak\\trattoriabyjanariak\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|solutionrelative:trattoriabyjanariak\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|c:\\users\\2dam3\\source\\repos\\trattoriabyjanariak\\trattoriabyjanariak\\pedidosview\\crearpedido.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F0F91F4A-9A79-4141-A913-562B8AC1C5E4}|TrattoriaByJanariak\\TrattoriaByJanariak.csproj|solutionrelative:trattoriabyjanariak\\pedidosview\\crearpedido.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "TrattoriaByJanariak\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\MainWindow.xaml",
+              "RelativeToolTip": "TrattoriaByJanariak\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-02T02:40:52.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CrearPedido.xaml",
+              "DocumentMoniker": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\PedidosView\\CrearPedido.xaml",
+              "RelativeDocumentMoniker": "TrattoriaByJanariak\\PedidosView\\CrearPedido.xaml",
+              "ToolTip": "C:\\Users\\2dam3\\source\\repos\\TrattoriaByJanariak\\TrattoriaByJanariak\\PedidosView\\CrearPedido.xaml",
+              "RelativeToolTip": "TrattoriaByJanariak\\PedidosView\\CrearPedido.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-02T02:37:52.409Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

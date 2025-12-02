@@ -1,0 +1,86 @@
+﻿<Window x:Class="TrattoriaByJanariak.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrattoriaByJanariak"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="900">
+    <Grid Background="{StaticResource BrushFondoClaro}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="280"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Style="{StaticResource EstiloCabecera}">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Border
+                    Width="100"
+                    Height="100"
+                    CornerRadius="50"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <Image
+                        Source="/Resources/logo.png"
+                        Stretch="UniformToFill"/>
+                </Border>
+                <TextBlock Text="TRATTORIA"
+                           Style="{StaticResource EstiloTituloCabecera}"
+                           Margin="0,0,0,10"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" 
+                Style="{StaticResource EstiloTarjeta}"
+                Width="400"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Margin="0,-60,0,0">
+            <StackPanel>
+                <Label Content="Usuario:" Style="{StaticResource EstiloLabelCampo}"/>
+                <TextBox x:Name="txtUsuario" 
+                         Style="{StaticResource EstiloTextBox}"
+                         Height="30"
+                         Margin="0,0,0,10"/>
+                <Label Content="Contraseña:" Style="{StaticResource EstiloLabelCampo}"/>
+                <PasswordBox x:Name="txtPassword" 
+                            Width="Auto"
+                            Height="30"
+                            Padding="10,8"
+                            Background="{StaticResource BrushBlanco}"
+                            BorderBrush="{StaticResource BrushDivisor}"
+                            BorderThickness="1"
+                            Margin="0,0,0,20">
+                    <PasswordBox.Style>
+                        <Style TargetType="PasswordBox">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="PasswordBox">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="8"
+                                                Padding="{TemplateBinding Padding}">
+                                            <ScrollViewer x:Name="PART_ContentHost" Margin="0"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="BorderBrush" Value="{StaticResource BrushRojo}"/>
+                                    <Setter Property="BorderThickness" Value="2"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </PasswordBox.Style>
+                </PasswordBox>
+                <Button Content="ENTRAR"
+                        Style="{StaticResource EstiloBotonPrincipal}"
+                        Width="250"
+                        Height="50"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Center"
+                        Click="BtnLogin_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
