@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginBottom="?android:attr/actionBarSize"
     android:background="@color/fondo_claro">
     <!-- Según la anchura y la altura, esta aplicación ocupará todo el ancho/alto de la pantalla.
      Además, también vamos a decirle a la aplicación que queremos apilar los elementos de manera vertical, y también

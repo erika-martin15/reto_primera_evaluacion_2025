@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="?android:attr/actionBarSize"
     android:background="@color/fondo_claro">
     <!-- En el apartado de Detalle de Producto, queríamos emular lo que muchas aplicaciones de comida ya ofrecen: una ventana que contenga la imagen principal
      del plato que se pueda reducir, poco a poco, cuando vas haciendo scroll en la ventana. También se podría haber seguido con el LinearLayout, pero no
