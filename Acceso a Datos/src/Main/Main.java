@@ -191,11 +191,6 @@ public class Main {
 	        if (plato != null) {
 	            detalle += pp.getCantidad() + " x " + plato.getNombre() + " + ";
 	            precio_total += plato.getPrecio() * pp.getCantidad();
-	            
-	            //Pequeños Detalles del pedido
-	            System.out.println("\n--- Detalles del pedido ---");
-	            System.out.println("Añadido al pedido: " + pp.getCantidad() + " x " + plato.getNombre());
-	    	    System.out.println("Fecha y hora del pedido: " + timestamp + "\n");
 	        }
 	    }
 
