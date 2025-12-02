@@ -43,6 +43,7 @@ public class Producto implements Serializable {
 
     // Crearemos un método que cambie el formato al correcto en lo que se refiere al precio.
     public String getPrecioFormateado() {
-        return String.format("%.2f €", precio); // "String.format()" permite crear cadenas de texto con un formato especídico. El "%" indica el comienzo del marcador de posición. ".2" dice cuántos decimales debe tener el número, y "f" que es de tipo float.
+        return String.format("%.2f €", precio);
+        // "String.format()" permite crear cadenas de texto con un formato especídico. El "%" indica el comienzo del marcador de posición. ".2" dice cuántos decimales debe tener el número, y "f" que es de tipo float.
     }
 }
