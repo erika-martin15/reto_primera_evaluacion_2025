@@ -18,72 +18,72 @@ import java.util.List;
 public class BackupPedidos {
 
 	public static void generar(RepositorioPedidos repositorioPedidos) {
-	    // Creamos un atributo que contenga la fecha actual.
-	    	String fechaActual = LocalDate.now().toString();
+	    String fechaActual = LocalDate.now().toString();
 	    try {
-	        // Creamos el documento XML
 	        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 	        DocumentBuilder builder = factory.newDocumentBuilder();
 	        Document doc = builder.newDocument();
-	
+
 	        // Elemento raíz <backup_pedidos> con atributo fecha
 	        Element backupPedidos = doc.createElement("backup_pedidos");
 	        backupPedidos.setAttribute("fecha", fechaActual);
 	        doc.appendChild(backupPedidos);
-	
+
 	        // Obtenemos TODOS los pedidos
 	        List<Pedido> listaPedidos = repositorioPedidos.obtenerTodos();
-	
-	        // Hacemos lo siguiente por cada pedido:
+
 	        for (Pedido pedido : listaPedidos) {
-	            // Creamos elemento <pedido> con atributo id
+	            // <pedido id="...">
 	            Element pedidoElement = doc.createElement("pedido");
 	            pedidoElement.setAttribute("id", String.valueOf(pedido.getId()));
 	            backupPedidos.appendChild(pedidoElement);
-	
-	            // Creamos <id_cliente>
+
+	            // <id_cliente>
 	            Element idCliente = doc.createElement("id_cliente");
 	            idCliente.setTextContent(String.valueOf(pedido.getCliente().getId()));
 	            pedidoElement.appendChild(idCliente);
-	
-	            // Creamos <detalle_pedido> que contendrá los platos separados
+
+	            // <detalle_pedido>
 	            Element detallePedido = doc.createElement("detalle_pedido");
 	            pedidoElement.appendChild(detallePedido);
-	
-	            // Separamos los platos, que están en una cadena separada por comas
-	            String detalleTexto = pedido.getDetalle_pedido(); // Por ejemplo: "pizza,hamburguesa,pasta"
-	            String[] platos = detalleTexto.split(" \\+ "); // Dividimos por comas
-	
-	            // Por cada plato, creamos un elemento <plato>
+
+	            // Separamos los platos (ajusta según tu formato real)
+	            String detalleTexto = pedido.getDetalle_pedido();
+	            // Si están separados por saltos de línea:
+	            String[] platos = detalleTexto.split("\\r?\\n");
+	            // Si estuvieran separados por comas: detalleTexto.split(",");
+
 	            for (String plato : platos) {
-	                Element platoElement = doc.createElement("plato");
-	                platoElement.setTextContent(plato.trim());
-	                detallePedido.appendChild(platoElement);
+	                if (!plato.isBlank()) {
+	                    Element platoElement = doc.createElement("plato");
+	                    platoElement.setTextContent(plato.trim());
+	                    detallePedido.appendChild(platoElement);
+	                }
 	            }
-	
-	            // Creamos <fecha_hora>
+
+	            // <fecha_hora>
 	            Element fechaHora = doc.createElement("fecha_hora");
 	            fechaHora.setTextContent(pedido.getFecha_hora().toString());
 	            pedidoElement.appendChild(fechaHora);
-	
-	            // Creamos <precio_total>
+
+	            // <precio_total>
 	            Element precioTotal = doc.createElement("precio_total");
 	            precioTotal.setTextContent(String.valueOf(pedido.getPrecio_total()));
 	            pedidoElement.appendChild(precioTotal);
 	        }
-	
+
 	        // Guardamos el XML en un archivo
 	        TransformerFactory transformerFactory = TransformerFactory.newInstance();
 	        Transformer transformer = transformerFactory.newTransformer();
 	        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 	        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
-	
+
 	        DOMSource source = new DOMSource(doc);
 	        StreamResult result = new StreamResult(new File("backup_pedidos.xml"));
 	        transformer.transform(source, result);
-	
+
 	        System.out.println("Backup XML generado correctamente");
-	
+
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }

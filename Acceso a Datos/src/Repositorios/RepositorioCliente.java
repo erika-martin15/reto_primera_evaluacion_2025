@@ -54,7 +54,6 @@ public class RepositorioCliente {
         } catch (SQLException e) {
            e.printStackTrace();
         	}
-
         return lista;
     }
     

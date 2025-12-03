@@ -93,8 +93,6 @@ public class Main {
 			e.printStackTrace();
 		}
 	}
-	
-	// Método para insertar un nuevo pedido
 	private static void insertarPedido() {
 	    RepositorioPlatos repositorioPlatos = null;
 	    RepositorioPedidos repositorioPedidos = null;
@@ -139,15 +137,15 @@ public class Main {
 	                    System.out.println(p.getId() + ". " + p.getNombre() + " - " + p.getPrecio() + "€");
 	                }
 
-	                System.out.print("Elige el id del plato que quieras: ");
-	                String idInput = sc.nextLine();
-	                int id_plato;
-	                try {
+	                	System.out.print("Elige el id del plato que quieras: ");
+	                	String idInput = sc.nextLine();
+	                	int id_plato;
+	                	try {
 	                    id_plato = Integer.parseInt(idInput);
-	                } catch (NumberFormatException e) {
-	                    System.out.println("Entrada inválida. Debes introducir un número de plato. Volviendo al menú.");
+	                	} catch (NumberFormatException e) {
+	                		System.out.println("Entrada inválida. Debes introducir un número de plato. Volviendo al menú.");
 	                    break;
-	                }
+	                	}	
 
 	                // Verificar que el id existe en la lista de platos
 	                Plato elegido = platos.stream()
@@ -163,14 +161,19 @@ public class Main {
 	                System.out.print("Dime la cantidad: ");
 	                String cantidadInput = sc.nextLine();
 	                int cantidad;
-	                try {
+	                	try {
 	                    cantidad = Integer.parseInt(cantidadInput);
-	                } catch (NumberFormatException e) {
-	                    System.out.println("Entrada inválida. La cantidad debe ser un número. Volviendo al menú.");
+	                	} catch (NumberFormatException e) {
+	                		System.out.println("Entrada inválida. La cantidad debe ser un número. Volviendo al menú.");
+	                    break;
+	                	}
+	                	if (cantidad <= 0) {
+	                		System.out.println("Cantidad no válida. Debe ser mayor que 0.");
 	                    break;
 	                }
-	                if (cantidad <= 0) {
-	                    System.out.println("Cantidad no válida. Debe ser mayor que 0.");
+	                // 🚨 Restricción: máximo 30 unidades
+	                if (cantidad > 30) {
+	                    System.out.println("Cantidad no válida. No puedes pedir más de 30 unidades de un mismo plato.");
 	                    break;
 	                }
 
@@ -182,7 +185,12 @@ public class Main {
 	                        .orElse(null);
 
 	                if (existente != null) {
-	                    existente.setCantidad(existente.getCantidad() + cantidad);
+	                    int nuevaCantidad = existente.getCantidad() + cantidad;
+	                    if (nuevaCantidad > 30) {
+	                        System.out.println("No puedes superar las 30 unidades de un mismo plato en total.");
+	                        break;
+	                    }
+	                    existente.setCantidad(nuevaCantidad);
 	                } else {
 	                    Pedido_Plato pedido_Plato = new Pedido_Plato(id_cliente, id_plato, cantidad);
 	                    pedido_Platos.add(pedido_Plato);
@@ -255,5 +263,4 @@ public class Main {
 	        e.printStackTrace();
 	    }
 	}
-
 }
